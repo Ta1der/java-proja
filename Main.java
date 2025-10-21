@@ -32,14 +32,14 @@ public class Main {
         Car[] oldHondaCars = getCarByBrendAndYearOperational(cars, "Honda", 4);
         System.out.println("Найдено машин Honda старше 4 лет: " + oldHondaCars.length);
 
-        // Тест с несуществующей маркой
+
         Car[] noCars = getCarByBrendAndYearOperational(cars, "Audi", 3);
         System.out.println("Найдено машин Audi старше 3 лет: " + noCars.length);
     }
 
-    // Метод для фильтрации машин по марке
+    
     public static Car[] getCarByBrend(Car[] cars, String brend) {
-        // Сначала подсчитаем количество машин нужной марки
+        
         int count = 0;
         for (Car car : cars) {
             if (car.getBrand().equalsIgnoreCase(brend)) {
@@ -47,11 +47,11 @@ public class Main {
             }
         }
 
-        // Создаем массив нужного размера
+        
         Car[] result = new Car[count];
         int index = 0;
         
-        // Заполняем массив
+        
         for (Car car : cars) {
             if (car.getBrand().equalsIgnoreCase(brend)) {
                 result[index++] = car;
@@ -61,11 +61,11 @@ public class Main {
         return result;
     }
 
-    // Метод для фильтрации машин по марке и сроку эксплуатации
+    
     public static Car[] getCarByBrendAndYearOperational(Car[] cars, String brend, int years) {
         int currentYear = java.time.Year.now().getValue();
         
-        // Сначала подсчитаем количество подходящих машин
+        
         int count = 0;
         for (Car car : cars) {
             int yearsOperational = currentYear - car.getYear();
@@ -74,11 +74,11 @@ public class Main {
             }
         }
 
-        // Создаем массив нужного размера
+        
         Car[] result = new Car[count];
         int index = 0;
         
-        // Заполняем массив
+    
         for (Car car : cars) {
             int yearsOperational = currentYear - car.getYear();
             if (car.getBrand().equalsIgnoreCase(brend) && yearsOperational > years) {
