@@ -17,13 +17,11 @@ public class PersonalComputer extends Device {
         return "PersonalComputer";
     }
     
+    // Переопределяем print() (был sprint())
     @Override
-    public String sprint() {
-        return "PersonalComputer{" +
-                "id=" + id +
-                ", price=" + price +
-                ", ip='" + (ip != null ? ip : "null") + '\'' +
-                '}';
+    public String print() {
+        String ipInfo = (ip != null) ? ip : "null";
+        return "PersonalComputer{id=" + id + ", price=" + price + ", ip='" + ipInfo + "'}";
     }
     
     @Override

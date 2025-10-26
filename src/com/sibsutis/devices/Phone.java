@@ -16,16 +16,11 @@ public class Phone extends Device {
     public String getDeviceType() {
         return "Phone";
     }
-    
     @Override
-    public String sprint() {
-        return "Phone{" +
-                "id=" + id +
-                ", price=" + price +
-                ", ip='" + (ip != null ? ip : "null") + '\'' +
-                '}';
+    public String print() {
+        String ipInfo = (ip != null) ? ip : "null";
+        return "Phone{id=" + id + ", price=" + price + ", ip='" + ipInfo + "'}";
     }
-    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

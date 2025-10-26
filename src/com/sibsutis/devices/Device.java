@@ -3,9 +3,9 @@ package com.sibsutis.devices;
 import com.sibsutis.Printable;
 
 public abstract class Device implements Printable {
-    protected int id;        
-    protected int price;  
-    protected String ip;   
+    protected int id;
+    protected int price;
+    protected String ip;
     
     public Device(int id, int price, String ip) {
         this.id = id;
@@ -16,21 +16,25 @@ public abstract class Device implements Printable {
     public Device(int id, int price) {
         this(id, price, null);
     }
-    public int getId() { return id; }
-    public int getPrice() { return price; }
-    public String getIp() { return ip; }
-    public void setId(int id) { this.id = id; }
-    public void setPrice(int price) { this.price = price; }
-    public void setIp(String ip) { this.ip = ip; }
+    
+    public int getId() {
+        return id;
+    }
+    
+    public int getPrice() {
+        return price;
+    }
+    
+    public String getIp() {
+        return ip;
+    }
+    
     public abstract String getDeviceType();
+
     @Override
-    public String sprint() {
-        return "Device{" +
-                "id=" + id +
-                ", price=" + price +
-                ", ip='" + (ip != null ? ip : "null") + '\'' +
-                ", type='" + getDeviceType() + '\'' +
-                '}';
+    public String print() {
+        String ipInfo = (ip != null) ? ip : "null";
+        return "Device{id=" + id + ", price=" + price + ", ip='" + ipInfo + "', type='" + getDeviceType() + "'}";
     }
     
     @Override
